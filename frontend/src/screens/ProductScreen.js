@@ -4,8 +4,8 @@ import Rating from "../components/Rating";
 import data from "../data";
 
 export default function HomeScreen(props) {
-  const proDuct = data.product.find((x) => x._id === props.match.params.id);
-  if (!proDuct) {
+  const product = data.products.find((x) => x._id === props.match.params.id);
+  if (!product) {
     return <div>Product not found</div>;
   }
   return (
@@ -13,23 +13,23 @@ export default function HomeScreen(props) {
       <Link to="/">Back to result</Link>
       <div className="row top">
         <div className="col-2">
-          <img className="large" src={proDuct.images} alt={proDuct.name}></img>
+          <img className="large" src={product.images} alt={product.name}></img>
         </div>
         <div className="col-1">
           <ul>
             <li>
-              <h2>{proDuct.name}</h2>
+              <h2>{product.name}</h2>
             </li>
             <li>
               <Rating
-                rating={proDuct.rating}
-                numReviews={proDuct.numReviews}
+                rating={product.rating}
+                numReviews={product.numReviews}
               ></Rating>
             </li>
-            <li>Price: ${proDuct.price}</li>
+            <li>Price: ${product.price}</li>
             <li>
               Description:
-              <p>{proDuct.description}</p>
+              <p>{product.description}</p>
             </li>
           </ul>
         </div>
@@ -39,17 +39,17 @@ export default function HomeScreen(props) {
               <li>
                 <div className="row">
                   <div>Price</div>
-                  <div className="price">${proDuct.price}</div>
+                  <div className="price">${product.price}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>Status</div>
                   <div>
-                    {proDuct.countInStock > 0 ? (
+                    {product.countInStock > 0 ? (
                       <span className="success">In Stock</span>
                     ) : (
-                      <span className="error">Unavailable</span>
+                      <span className="danger">Unavailable</span>
                     )}
                   </div>
                 </div>
