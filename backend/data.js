@@ -17,7 +17,6 @@ const data = {
 
   products: [
     {
-      _id: "1",
       name: "Canyon Spectral CF 8.0",
       category: "Bikes",
       images: "/images/p1.jpg",
@@ -29,7 +28,6 @@ const data = {
       description: "High end enduro bike",
     },
     {
-      _id: "2",
       name: "NS Snabb",
       category: "Bikes",
       images: "/images/p2.jpg",
@@ -41,7 +39,6 @@ const data = {
       description: "High end enduro bike",
     },
     {
-      _id: "3",
       name: "Yeti",
       category: "Bikes",
       images: "/images/p3.jpg",
@@ -53,7 +50,6 @@ const data = {
       description: "High end enduro bike",
     },
     {
-      _id: "4",
       name: "Marin ",
       category: "Bikes",
       images: "/images/p4.jpg",
@@ -65,7 +61,6 @@ const data = {
       description: "High end enduro bike",
     },
     {
-      _id: "5",
       name: "Giant",
       category: "Bikes",
       images: "/images/p5.jpg",
@@ -77,7 +72,6 @@ const data = {
       description: "High end enduro bike",
     },
     {
-      _id: "6",
       name: "Trek",
       category: "Bikes",
       images: "/images/p6.jpg",
