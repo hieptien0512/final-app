@@ -8,9 +8,30 @@ export const generateToken = (user) => {
       email: user.email,
       isAdmin: user.isAdmin,
     },
-    process.env.JWT_SECRET,
+    process.env.JWT_SECRET || "somethingsecret",
     {
       expiresIn: "30d",
     }
   );
+};
+
+export const isAuth = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  if (authorization) {
+    const token = authorization.slice(7, authorization.length);
+    jwt.verify(
+      token,
+      process.env.JWT_SECRET || "somethingsecret",
+      (err, decode) => {
+        if (err) {
+          res.status(401).send({ messagae: "invalid token" });
+        } else {
+          req.user = decode;
+          next();
+        }
+      }
+    );
+  } else {
+    res.status(401).send({ messagae: "NO token" });
+  }
 };
