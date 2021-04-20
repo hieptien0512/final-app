@@ -25,6 +25,12 @@ const orderSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    paymentResult: {
+      id: String,
+      status: String,
+      update_time: String,
+      email_address: String,
+    },
     itemPrice: {
       type: Number,
       require: true,
